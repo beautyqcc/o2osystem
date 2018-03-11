@@ -1,0 +1,15 @@
+.sideBarUl{
+    width: 40px;
+
+    position: fixed;
+    top:100px;
+    right:0;
+}
+.sideBarLi{
+    height: 50px;
+    line-height: 50px;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #bebebe;
+
+}

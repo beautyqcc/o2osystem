@@ -1,0 +1,48 @@
+.searchDiv{
+    margin:0 auto;
+}
+.searchInput{
+    background: #fff;
+    float: left;
+    border:1px solid #fff;
+}
+.searchSpan{
+    display: block;
+    float: left;
+}
+/*首页样式*/
+.index{
+    width: 60%;
+    height:50px;
+}
+.index>input{
+    width: 80%;
+    height:50px;
+}
+.index>span{
+    width: 19%;
+    height:52px;
+    line-height: 50px;
+    text-align: center;
+    font-size:20px;
+    background: #00ae66;
+    color:#fff;
+}
+/*其他样式*/
+.other{
+    width:50%;
+    height:30px;
+}
+.other>input{
+    width: 80%;
+    height:30px;
+}
+.other>span{
+    width: 19%;
+    height:32px;
+    line-height: 30px;
+    text-align: center;
+    font-size:16px;
+    background: #f36;
+    color:#fff;
+}
