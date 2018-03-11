@@ -29,7 +29,7 @@ class PwdLogin extends Component{
                 <p className='tips' id='tips'>错误提示</p>
                 <p className='submit' onClick={this.submit}>登录</p>
                 <p className='link'>
-                    <span id='telSpan'onClick={this.trunToTel}>手机快捷登录</span>
+                    <span id='telSpan'onClick={this.trunToTel}>邮箱登录</span>
                     <span id='forget' onClick={this.changeCode}>忘记密码</span>
                 </p>
             </div>
