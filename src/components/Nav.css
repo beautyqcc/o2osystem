@@ -16,19 +16,19 @@
     color: #f86;
     text-decoration: underline;
 }
-li>a.active{
+li>a.show{
     color:red;
 }
 /*首页样式*/
 .right{
   background: #fff;
-    width:50%;
+    width: 80%;
     float: right;
     padding: 20px;
-    border:1px solid red;
+    font-size: 18px;
 }
 .right>li{
-    margin-left: 70px;
+    margin-left: 80px;
 }
 
 /*其他页面样式*/

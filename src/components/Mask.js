@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import './Mask.css';
+import PropTypes from "prop-types";
 var FontAwesome = require('react-fontawesome');
 
 class Mask extends Component{
+    static contextTypes = {
+        router: PropTypes.object
+    }
+    constructor(propes, context) {
+        super(propes, context);
+        this.close = this.close.bind(this);
+        this.closeMask= this.closeMask.bind(this);
+    }
     componentDidMount(){
        var mask=document.getElementById('mask');
        var maskInfor=mask.firstChild;
@@ -11,18 +20,20 @@ class Mask extends Component{
        mask.style.height=height+"px";
        mask.style.width=width+"px";
        maskInfor.style.left=(width-maskInfor.offsetWidth)/2+'px';
-       mask.addEventListener('click',function (e) {
-           if(e.target.nodeName.toLowerCase()=='div'){
-               mask.style.display="none";
-           }
-       })
+
+    }
+    closeMask(e){
+        if(e.target.nodeName.toLowerCase()=='div'){
+            this.context.router.history.push('/');
+        }
     }
     close(){
-        document.getElementById("mask").style.display="none";
-}
+        console.log(this.context);
+        this.context.router.history.push('/');
+    }
     render(){
         return (
-            <div className='mask' id='mask' >
+            <div className='mask' id='mask' onClick={this.closeMask} >
                 <div className='maskInfor' >
                     <FontAwesome className='super-crazy-colors' name='remove' size='1g' style={{ color:'#555' }} onClick={this.close} />
                     <ul>

@@ -36,6 +36,7 @@
 .other>input{
     width: 80%;
     height:30px;
+    border:1px solid gray;
 }
 .other>span{
     width: 19%;

@@ -56,10 +56,10 @@ class SideBar extends Component{
 
                     this.state.json['fangdong'].map(function (item,index) {
                         return(
-                        <li className='sideBarLi' >
+                        <li className='sideBarLi' key={index} >
                             <a href={item[0]}>
 
-                                <FontAwesome className='super-crazy-colors' name={item[1]} size='1g' style={{ color:'red' }}/>
+                                <FontAwesome className='super-crazy-colors' name={item[1]} size="1g" style={{ color:'red' }}/>
                             </a>
                         </li>
                         );

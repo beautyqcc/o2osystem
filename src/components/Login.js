@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import Mask from './Mask'
-import TelLogin from './TelLogin'
 import PwdLogin from "./PwdLogin";
-
+import Register from "./Register";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 class Login extends Component{
     render(){
         return(
             <Mask id='mask'>
-             <TelLogin  />
-                <PwdLogin />
+                <div>
+                    <PwdLogin/>
+                </div>
             </Mask>
         );
     }
