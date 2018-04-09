@@ -1,0 +1,46 @@
+.content{
+    width:80%;
+    background-color: white;
+    margin:20px auto;
+    padding:20px;
+}
+.img{
+    width:20%;
+    float: left;
+    cursor: pointer;
+}
+.img>img{
+   width:80%;
+}
+.infor{
+    width:79%;
+    float: left;
+}
+.infor p{
+    margin-top: 15px;
+}
+.desc{
+    font-size: 22px;
+    color:#666;
+}
+.desc:hover{
+    color:red;
+}
+.details{
+    color:#888;
+}
+.details span{
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.details span:first-of-type{
+    margin-left: 0px;
+}
+.details span.price{
+    float: right;
+}
+.address{
+    color:#888;
+    font-size: 18px;
+}

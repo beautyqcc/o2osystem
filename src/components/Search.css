@@ -17,7 +17,8 @@
 }
 .index>input{
     width: 80%;
-    height:50px;
+    height:52px;
+    border:2px solid #00ae66;
 }
 .index>span{
     width: 19%;
@@ -35,7 +36,7 @@
 }
 .other>input{
     width: 80%;
-    height:30px;
+    height:32px;
     border:1px solid gray;
 }
 .other>span{
