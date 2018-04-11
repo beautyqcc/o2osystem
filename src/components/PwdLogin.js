@@ -3,7 +3,11 @@ import './PwdLogin.css'
 import ChangeCode from "./ChangeCode";
 import  Common from './../common/common.js';
 import $ from 'jquery'
+import PropTypes from "prop-types";
 class PwdLogin extends Component{
+    static contextTypes = {
+        router: PropTypes.object
+    }
     constructor(){
         super();
         this.changeCode=this.changeCode.bind(this);
@@ -16,6 +20,7 @@ class PwdLogin extends Component{
         this.userName=this.userName.bind(this);
         this.changeCode=this.changeCode.bind(this);
         this.submit=this.submit.bind(this);
+        this.keyDown=this.keyDown.bind(this);
     }
     userName(e){
         this.setState({
@@ -30,16 +35,19 @@ class PwdLogin extends Component{
     submit(){
        var pwd=this.state.pwd;
        var userName=this.state.userName;
+       var that=this;
         $.ajax({
             url:Common.path+"/login",
             type:"post",
             data:{userName:userName,password:pwd},
+            xhrFields:{withCredentials: true},
            error:function(msg){
                 console.log(msg);
                 console.log("aaa");
            },
             success:function(data){
-                console.log(data);
+                Common.player=data.result.role;
+                that.context.router.history.push('/');
          },
           dataType:"json"
         });
@@ -48,6 +56,11 @@ class PwdLogin extends Component{
      this.setState({
          flag:false
      });
+    }
+    keyDown(e){
+        if(e.keyCode==13){
+            this.submit()
+        }
     }
     render(){
         var show;
@@ -59,7 +72,7 @@ class PwdLogin extends Component{
                     <input type='text' placeholder='请输入账号' value={this.state.userName} onChange={this.userName}/>
                 </p>
                 <p  className='telLogin'>
-                    <input type='password' placeholder='请输入密码' value={this.state.pwd} onChange={this.pwd}/>
+                    <input type='password' placeholder='请输入密码' value={this.state.pwd} onChange={this.pwd} onKeyDown={this.keyDown}/>
                 </p>
                 <p className='tips' id='tips'>错误提示</p>
                 <p className='submit' onClick={this.submit}>登录</p>

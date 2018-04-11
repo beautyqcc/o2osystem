@@ -6,7 +6,6 @@ import  Common from './../common/common.js';
 import $ from 'jquery'
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import PropTypes from "prop-types";
-
 class Register extends Component{
     static contextTypes = {
         router: PropTypes.object
@@ -17,8 +16,10 @@ class Register extends Component{
         this.state={
             isRegister:false
         };
+        console.log(context);
     }
     submit(){
+        var that = this;
       var userName= this.refs.data.state.userName;
       var pwd= this.refs.data.state.pwd;
       var tel= this.refs.data.state.tel;
@@ -32,8 +33,7 @@ class Register extends Component{
                 "Content-Type":"application/json;charset=UTF-8"
             },
             success:function (data) {
-                console.log(this.context);
-                // this.context.router.history.push('/login');
+                that.context.router.history.push('/login');
             },
             error:function (msg) {
                 console.log(msg);

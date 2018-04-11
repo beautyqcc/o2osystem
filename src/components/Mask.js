@@ -23,7 +23,7 @@ class Mask extends Component{
 
     }
     closeMask(e){
-        if(e.target.nodeName.toLowerCase()=='div'){
+        if(e.target.nodeName.toLowerCase()==='div'){
             this.context.router.history.push('/');
         }
     }

@@ -3,7 +3,11 @@ import Mask from './Mask'
 import PwdLogin from "./PwdLogin";
 import Register from "./Register";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import PropTypes from "prop-types";
+
 class Login extends Component{
+
+
     render(){
         return(
             <Mask id='mask'>
